@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @JohnCasAsh
-- 👀 I’m interested in 
+- 👀 I’m interested in learning and expanding my ideas through the global campus hope we can collaborate and expand our experties together
 - 🌱 I’m currently learning DSA, OOP, HCI and MultiMedia System
 - 💞️ I’m looking to collaborate on people who can help me with my lesson
 - 📫 How to reach me, by using my email johnasleylunnay@gmail.com
