@@ -32,21 +32,25 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username })
             });
+            const data = await response.json();
+            alert(data.message || data.error); // Show result
             document.getElementById('username').value = '';
-            updateQueue();
+            updateQueue(); // Update queue
         });
 
         // Process next user
         processUserButton.addEventListener('click', async () => {
-            await fetch('/process', { method: 'POST' });
-            updateQueue();
+            const response = await fetch('/process', { method: 'POST' });
+            const data = await response.json();
+            alert(data.message || data.error); // Show result
+            updateQueue(); // Update queue
         });
 
         // Update the queue list
         async function updateQueue() {
             const response = await fetch('/queue');
             const data = await response.json();
-            queueList.innerHTML = '';
+            queueList.innerHTML = ''; // Clear current list
             data.queue.forEach(user => {
                 const li = document.createElement('li');
                 li.textContent = user;
@@ -54,4 +58,9 @@
             });
         }
 
-        // Initial que
+        // Initial queue load
+        updateQueue();
+    </script>
+</body>
+</html>
+
