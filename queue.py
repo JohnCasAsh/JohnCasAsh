@@ -8,12 +8,10 @@ user_queue = deque()
 
 @app.route('/')
 def home():
-    # Serve the index.html file
     return render_template('index.html')
 
 @app.route('/signup', methods=['POST'])
 def sign_up():
-    # Handle user sign-up
     data = request.get_json()
     username = data.get('username')
     if username:
@@ -23,7 +21,6 @@ def sign_up():
 
 @app.route('/process', methods=['POST'])
 def process_user():
-    # Process the first user in the queue
     if user_queue:
         next_user = user_queue.popleft()
         return jsonify({"message": f"Processing account for user: {next_user}"}), 200
@@ -31,7 +28,6 @@ def process_user():
 
 @app.route('/queue', methods=['GET'])
 def get_queue():
-    # Return the current queue as a list
     return jsonify({"queue": list(user_queue)}), 200
 
 if __name__ == '__main__':
