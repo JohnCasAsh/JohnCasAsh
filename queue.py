@@ -8,8 +8,8 @@ user_queue = deque()
 
 @app.route('/')
 def home():
-    # Serve the home.html file
-    return render_template('home.html')
+    # Serve the index.html file
+    return render_template('index.html')
 
 @app.route('/signup', methods=['POST'])
 def sign_up():
